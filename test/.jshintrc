@@ -1,0 +1,31 @@
+{
+	"boss": true,
+	"eqeqeq": true,
+	"eqnull": true,
+	"expr": true,
+	"immed": true,
+	"noarg": true,
+	"onevar": false,
+	"quotmark": "double",
+	"smarttabs": true,
+	"trailing": true,
+	"undef": true,
+	"unused": true,
+
+	"node": true,
+
+	"globals": {
+		"after": false,
+		"afterEach": false,
+		"before": false,
+		"beforeEach": false,
+		"describe": false,
+		"it": false,
+		"setup": false,
+		"suite": false,
+		"suiteSetup": false,
+		"suiteTeardown": false,
+		"teardown": false,
+		"test": false
+	}
+}
