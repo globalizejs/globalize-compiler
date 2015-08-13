@@ -7,7 +7,7 @@
     "globalize-compiler": "./bin/globalize-compiler"
   },
   "scripts": {
-    "test": "jshint index.js src/**/*.js test/*.js && mocha"
+    "test": "jshint index.js lib/**/*.js test/*.js && mocha"
   },
   "repository": {
     "type": "git",

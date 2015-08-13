@@ -1,6 +1,6 @@
-var compile = require( "./src/compile" );
-var compileExtracts = require( "./src/compile-extracts" );
-var extract = require( "./src/extract" );
+var compile = require( "./lib/compile" );
+var compileExtracts = require( "./lib/compile-extracts" );
+var extract = require( "./lib/extract" );
 
 module.exports = {
 	compile: compile,
