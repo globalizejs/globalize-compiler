@@ -3,6 +3,12 @@
   "version": "0.0.1",
   "description": "Globalize.js runtime compiler for your formatters and parsers",
   "main": "index.js",
+  "files": [
+    "bin/",
+    "index.js",
+    "lib/",
+    "LICENSE.txt"
+  ],
   "bin": {
     "globalize-compiler": "./bin/globalize-compiler"
   },
