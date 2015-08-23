@@ -1,6 +1,6 @@
 {
   "name": "globalize-compiler",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Globalize.js runtime compiler for your formatters and parsers",
   "main": "index.js",
   "files": [
