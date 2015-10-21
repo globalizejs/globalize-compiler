@@ -9,15 +9,26 @@ var fixtures = {
 };
 
 describe("Extract Formatters & Parsers", function() {
-  it("should extract formatters and parsers from basic code", function() {
-    var extract = globalizeCompiler.extract(fixtures.basic);
-    expect(extract).to.be.a("function");
+  var extract;
 
-    // FIXME
-    console.log(globalizeCompiler.compileExtracts({
+  it("should extract formatters and parsers from basic code", function() {
+    extract = globalizeCompiler.extract(fixtures.basic);
+    expect(extract).to.be.a("function");
+  });
+
+  it("should compile extracts from basic code", function() {
+    var compiledString = globalizeCompiler.compileExtracts({
       defaultLocale: "en",
+      messages: {
+        en: {
+          like: "Foo"
+        }
+      },
       extracts: extract
-    }));
+    });
+
+    // TODO: appropriate assertions
+    expect(compiledString).to.be.a("string");
   });
 
 });
