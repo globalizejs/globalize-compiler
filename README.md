@@ -48,7 +48,7 @@ var globalizeCompiler = require( "globalize-compiler" );
 //     extract: [Function: extractor] }
 ```
 
-#### `.compile( formattersAndParsers )`
+#### `.compile( formattersAndParsers, options )`
 
 **formattersAndParsers** is an *Array* or an *Object* containing formatters and/or parsers, e.g.:
 
@@ -73,6 +73,14 @@ var globalizeCompiler = require( "globalize-compiler" );
     ...
 }
 ```
+
+**options** is an *Object* with the following properties:
+
+&nbsp;&nbsp;&nbsp; **template** optional. A function that replaces the default template. The function will receive a single *Object* parameter with two properties:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **compiled**: string, the source of the compiled formatters and parsers.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **dependencies**: array, a list of globalize runtime modules that the compiled code depends on, e.g. `globalize-runtime/number`.
 
 **Returns** a *String* with the generated JavaScript bundle (UMD wrapped) including the compiled formatters and parsers.
 
@@ -132,6 +140,8 @@ globalize.formatNumber( ... );
 &nbsp;&nbsp;&nbsp; **cldr** optional. It's an *Object* with CLDR data (in the JSON format) or a *Function* taking one argument: locale, a *String*; returning an *Object* with the CLDR data for the passed locale. Defaults to the entire supplemental data plus the entire main data for the defaultLocale.
 
 &nbsp;&nbsp;&nbsp; **messages** optional. It's an *Object* with messages data (in the JSON format) or a *Function* taking one argument: locale, a *String*; returning an *Object* with the messages data for the passed locale. Defaults to `{}`.
+
+&nbsp;&nbsp;&nbsp; **template** optional. A function that replaces the default template. See [`.compile()`][] for more details.
 
 **Returns** a *String* with the generated JavaScript bundle as returned by the [`.compile()`][] function.
 
