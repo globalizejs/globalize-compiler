@@ -16,8 +16,6 @@
 	}
 }( this, function( Globalize ) {
 
-{{dependenciesVars}}
-
 {{compiled}}
 
 return Globalize;
