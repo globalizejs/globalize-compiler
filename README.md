@@ -78,7 +78,7 @@ var globalizeCompiler = require( "globalize-compiler" );
 
 &nbsp;&nbsp;&nbsp; **template** optional. A function that replaces the default template. The function will receive a single *Object* parameter with two properties:
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **compiled**: string, the source of the compiled formatters and parsers.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **code**: string, the source of the compiled formatters and parsers.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **dependencies**: array, a list of globalize runtime modules that the compiled code depends on, e.g. `globalize-runtime/number`.
 
