@@ -35,10 +35,10 @@
   },
   "peerDependencies": {
     "cldr-data": ">=25",
-    "globalize": ">=1.1.0-rc.5"
+    "globalize": "^1.1.0"
   },
   "devDependencies": {
-    "babel": "^5.6.14",
+    "babel": "^6.3.26",
     "chai": "1.10.x",
     "cldr-data": ">=25",
     "jshint": "2.6.x",
