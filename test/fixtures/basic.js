@@ -39,3 +39,6 @@ console.log( like( 3 ) );
 
 // Use Globalize to format relative time.
 console.log( Globalize.formatRelativeTime( -35, "second" ) );
+
+// Use Globalize to parse a number.
+console.log( Globalize.parseNumber( "12345.6789" ) );

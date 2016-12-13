@@ -9,7 +9,7 @@ var fixtures = {
 };
 
 describe("Extract Formatters & Parsers", function() {
-  var extract;
+  var compiledString, extract;
 
   it("should extract formatters and parsers from basic code", function() {
     extract = globalizeCompiler.extract(fixtures.basic);
@@ -17,7 +17,7 @@ describe("Extract Formatters & Parsers", function() {
   });
 
   it("should compile extracts from basic code", function() {
-    var compiledString = globalizeCompiler.compileExtracts({
+    compiledString = globalizeCompiler.compileExtracts({
       defaultLocale: "en",
       messages: {
         en: {
@@ -27,8 +27,13 @@ describe("Extract Formatters & Parsers", function() {
       extracts: extract
     });
 
-    // TODO: appropriate assertions
     expect(compiledString).to.be.a("string");
+  });
+
+  describe("compile.js", function() {
+    it("should handle runtimeArgs regexps", function() {
+      expect(compiledString).to.have.string("numberParserFn([{\".\":\".\",\",\":\",\",\"%\":\"%\",\"+\":\"+\",\"-\":\"-\",\"E\":\"E\",\"‰\":\"‰\"},,{\"infinity\":/^∞/,\"nan\":/^NaN/,\"negativePrefix\":/^-/,\"negativeSuffix\":/^/,\"number\":/^((\\d{1,3}(,\\d{3})+|\\d+))?(\\.\\d+)?/,\"prefix\":/^/,\"suffix\":/^/}]);");
+    });
   });
 
 });
