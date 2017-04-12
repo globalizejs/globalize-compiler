@@ -13,7 +13,11 @@
     "globalize-compiler": "./bin/globalize-compiler"
   },
   "scripts": {
-    "test": "eslint --ignore-path .gitignore --ext .js index.js lib test bin && mocha"
+    "test": "npm run lint && npm run test:unit && npm run test:functional",
+    "lint": "eslint --ignore-path .gitignore --ext .js index.js lib test bin",
+    "test:unit": "mocha test/unit",
+    "test:build:functional": "mkdir test/functional/fixtures 2>/dev/null; ./bin/globalize-compiler -l en -m test/unit/fixtures/en-messages.json -o test/functional/fixtures/basic-compiled-en-formatters.js test/unit/fixtures/basic.js",
+    "test:functional": "npm run test:build:functional && mocha test/functional"
   },
   "repository": {
     "type": "git",

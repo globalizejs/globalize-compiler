@@ -1,7 +1,7 @@
 var fs = require("fs");
 var esprima = require("esprima");
 var expect = require("chai").expect;
-var globalizeCompiler = require("../index");
+var globalizeCompiler = require("../../index");
 
 var fixtures = {
 	//babel: esprima.parse(babel.transform(fs.readFileSync(__dirname + "/fixtures/es6.js")).code),
@@ -29,11 +29,4 @@ describe("Extract Formatters & Parsers", function() {
 
 		expect(compiledString).to.be.a("string");
 	});
-
-	describe("compile.js", function() {
-		it("should handle runtimeArgs regexps", function() {
-			expect(compiledString).to.have.string("numberParserFn([{\".\":\".\",\",\":\",\",\"%\":\"%\",\"+\":\"+\",\"-\":\"-\",\"E\":\"E\",\"‰\":\"‰\"},,{\"infinity\":/^∞/,\"nan\":/^NaN/,\"negativePrefix\":/^-/,\"negativeSuffix\":/^/,\"number\":/^((\\d{1,3}(,\\d{3})+|\\d+))?(\\.\\d+)?/,\"prefix\":/^/,\"suffix\":/^/}]);");
-		});
-	});
-
 });
