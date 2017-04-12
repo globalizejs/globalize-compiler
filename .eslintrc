@@ -1,0 +1,17 @@
+{
+  "env": {
+    "browser": true,
+    "mocha": true,
+    "node": true
+  },
+  "extends": [
+    "defaults"
+  ],
+  "rules": {
+    "no-console": 0,
+    "no-trailing-spaces": "warn",
+    "quotes": ["warn", "double"],
+    "semi": "warn",
+    "indent": ["warn", "tab"]
+  }
+}
