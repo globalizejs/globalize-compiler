@@ -4,6 +4,12 @@ var Globalize = require( "globalize" );
 // Use Globalize to format dates.
 console.log( Globalize.formatDate( new Date(), { date: "medium" } ) );
 
+// Use Globalize to format dates in specific time zones.
+console.log( Globalize.formatDate( new Date(), {
+	datetime: "medium",
+	timeZone: "America/Sao_Paulo"
+}));
+
 // Use Globalize to format dates to parts.
 console.log( Globalize.formatDateToParts( new Date(), { datetime: "medium" } ) );
 
