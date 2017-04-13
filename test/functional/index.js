@@ -10,6 +10,11 @@ describe("The compiled `basic.js`", function() {
 		expect(result).to.have.string("2017");
 	});
 
+	it("should include formatDate with timeZone support", function() {
+		var result = Globalize.formatDate(new Date("2017-04-15T12:00:00Z"), {datetime: "medium", timeZone: "America/Sao_Paulo"});
+		expect(result).to.equal("Apr 15, 2017, 9:00:00 AM");
+	});
+
 	it("should include formatDateToParts", function() {
 		var result = Globalize.formatDateToParts(new Date(2017, 3, 15), {datetime: "medium"});
 		expect(result).to.include({type: "month", value: "Apr"});
