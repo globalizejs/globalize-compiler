@@ -16,6 +16,11 @@ describe("The compiled `basic.js`", function() {
 		expect(result).to.have.string("2017");
 	});
 
+	it("should include formatDate with timeZone support", function() {
+		var result = Globalize.formatDate(new Date("2017-04-15T12:00:00Z"), {datetime: "full", timeZone: "America/Sao_Paulo"});
+		expect(result).to.equal("Saturday, April 15, 2017 at 9:00:00 AM Brasilia Standard Time");
+	});
+
 	it("should include formatDateToParts", function() {
 		var result = Globalize.formatDateToParts(new Date(2017, 3, 15), {datetime: "medium"});
 		expect(result).to.include({type: "month", value: "Apr"});
@@ -57,5 +62,10 @@ describe("The compiled `basic.js`", function() {
 		expect(result.getFullYear()).to.equal(1982);
 		expect(result.getMonth()).to.equal(0);
 		expect(result.getDate()).to.equal(2);
+	});
+
+	it("should include parseDate with timeZone support", function() {
+		var result = Globalize.parseDate("January 1, 2000 at 12:00:00 AM EST", {datetime: "long", timeZone: "America/New_York"});
+		expect(result).to.deep.equal(new Date("2000-01-01T05:00:00Z"));
 	});
 });

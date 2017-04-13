@@ -29,6 +29,8 @@ Use the command line interface as a convenience over using the API directly. It'
 
 **`-c, --cldr CLDR_FILE`** Optional. All necessary CLDR data for given locale (JSON format).
 
+**`-z, --tz TIME_ZONE_FILE`** Optional. All necessary time zone data (JSON format).
+
 **`-m, --messages MESSAGES_FILE`** Optional. Translation messages for given locale (JSON format).
 
 **`-o, --output DEST_FILE`** Destination JavaScript file, e.g., `app-en.js`.
@@ -138,6 +140,8 @@ globalize.formatNumber( ... );
 &nbsp;&nbsp;&nbsp; **defaultLocale** is a locale to be used as `Globalize.locale( defaultLocale )` when generating the extracted formatters and parsers.
 
 &nbsp;&nbsp;&nbsp; **cldr** optional. It's an *Object* with CLDR data (in the JSON format) or a *Function* taking one argument: locale, a *String*; returning an *Object* with the CLDR data for the passed locale. Defaults to the entire supplemental data plus the entire main data for the defaultLocale.
+
+&nbsp;&nbsp;&nbsp; **timeZoneData** optional. It's an *Object* with IANA time zone data (in the JSON format) or a *Function* returning an *Object* with the IANA time zone data. Defaults to the entire IANA time zone data from `[iana-tz-data](https://github.com/rxaviers/iana-tz-data)` package.
 
 &nbsp;&nbsp;&nbsp; **messages** optional. It's an *Object* with messages data (in the JSON format) or a *Function* taking one argument: locale, a *String*; returning an *Object* with the messages data for the passed locale. Defaults to `{}`.
 

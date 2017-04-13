@@ -6,7 +6,7 @@ var nopt = require( "nopt" );
 var path = require( "path" );
 var pkg = require( "../package.json" );
 
-var bundle, cldr, extracts, extraOptions, input, locale, messages, opts, output, requiredOpts;
+var bundle, cldr, extracts, extraOptions, timeZoneData, input, locale, messages, opts, output, requiredOpts;
 
 function help() {
 	var out = [
@@ -41,6 +41,7 @@ opts = nopt( {
 	v: "--version",
 	l: "--locale",
 	c: "--cldr",
+	z: "--tz",
 	m: "--messages",
 	o: "--output"
 });
@@ -69,10 +70,12 @@ if ( opts.help || !requiredOpts || extraOptions.length ) {
 input = opts.argv.remain;
 locale = opts.locale;
 cldr = opts.cldr;
+timeZoneData = opts.tz;
 messages = opts.messages;
 output = opts.output;
 
 cldr = cldr ? JSON.parse( fs.readFileSync( cldr ) ) : null;
+timeZoneData = timeZoneData ? JSON.parse( fs.readFileSync( timeZoneData ) ) : null;
 messages = messages ? JSON.parse( fs.readFileSync( messages ) ) : null;
 
 extracts = input.map(function( input ) {
@@ -82,6 +85,7 @@ extracts = input.map(function( input ) {
 bundle = GlobalizeCompiler.compileExtracts({
 	defaultLocale: locale,
 	cldr: cldr,
+	timeZoneData: timeZoneData,
 	messages: messages,
 	extracts: extracts
 });
