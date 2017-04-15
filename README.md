@@ -87,7 +87,7 @@ var globalizeCompiler = require( "globalize-compiler" );
 **Example**
 
 ```javascript
-fs.writeSyncFile( "my-formatters-and-parsers.js", globalizeCompiler.compile([
+fs.writeFileSync( "my-formatters-and-parsers.js", globalizeCompiler.compile([
     formatter1,
     formatter2,
     ...,
