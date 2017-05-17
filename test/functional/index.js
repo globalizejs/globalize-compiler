@@ -4,7 +4,7 @@ Globalize.locale("en");
 
 describe("The compiled `basic.js`", function() {
 	it("should include formatDate", function() {
-		var result = Globalize.formatDate(new Date(2017, 3, 15), {datetime: "medium"});
+		var result = Globalize.formatDate(new Date(2017, 3, 15), {date: "medium"});
 		// Note, the reason for the loose match below is due to ignore the local time zone differences.
 		expect(result).to.have.string("Apr");
 		expect(result).to.have.string("2017");
