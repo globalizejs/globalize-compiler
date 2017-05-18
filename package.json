@@ -52,5 +52,6 @@
     "iana-tz-data": ">=2017.0.0",
     "jshint": "2.6.x",
     "mocha": "2.1.0"
-  }
+  },
+  "cldr-data-urls-filter": "(core|dates|numbers|units)"
 }
