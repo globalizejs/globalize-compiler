@@ -3,6 +3,12 @@ var expect = require("chai").expect;
 Globalize.locale("en");
 
 describe("The compiled `basic.js`", function() {
+	it("should include dateFormatter", function() {
+		var result = Globalize.dateFormatter({time: "medium"})(new Date(2017, 3, 15, 12, 31, 45));
+		// Note, the reason for the loose match below is due to ignore the local time zone differences.
+		expect(result).to.have.string("31:45");
+	});
+
 	it("should include formatDate", function() {
 		var result = Globalize.formatDate(new Date(2017, 3, 15), {date: "medium"});
 		// Note, the reason for the loose match below is due to ignore the local time zone differences.

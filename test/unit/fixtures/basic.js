@@ -2,6 +2,9 @@ var like;
 var Globalize = require( "globalize" );
 
 // Use Globalize to format dates.
+var dateFormatter = Globalize.dateFormatter( { time: "medium" } );
+console.log( dateFormatter( new Date() ) );
+
 console.log( Globalize.formatDate( new Date(), { date: "medium" } ) );
 
 // Use Globalize to format dates to parts.
