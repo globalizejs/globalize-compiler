@@ -7,6 +7,12 @@
 			"    one {You and someone else liked this}",
 			"  other {You and # others liked this}",
 			"}"
+		],
+		"task": [
+			"You have {count, plural,",
+			"    one {one task}",
+			"  other {{formattedCount} tasks}",
+			"} remaining"
 		]
 	}
 }

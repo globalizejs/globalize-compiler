@@ -21,7 +21,8 @@ describe("Extract Formatters & Parsers", function() {
 			defaultLocale: "en",
 			messages: {
 				en: {
-					like: "Foo"
+					like: "Foo",
+					task: "Bar"
 				}
 			},
 			extracts: extract
