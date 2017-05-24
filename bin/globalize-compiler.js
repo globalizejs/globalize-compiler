@@ -21,6 +21,7 @@ function help() {
 		"  -v, --version                  # Print the version number.",
 		"  -l, --locale LOCALE            # Specify a LOCALE to use in compilation.",
 		"  -c, --cldr CLDR_FILE           # Optional. All necessary CLDR data for given locale (JSON format).",
+		"  -z, --tz TIMEZONE_DATA_FILE    # Optional. All necessary IANA time zone data (JSON format).",
 		"  -m, --messages MESSAGES_FILE   # Optional. Translation messages for given locale (JSON format).",
 		"  -o, --output DEST_FILE         # Destination JS file, e.g., `app-en.js`.",
 		""
@@ -34,6 +35,7 @@ opts = nopt( {
 	version: Boolean,
 	locale: String,
 	cldr: path,
+	tz: path,
 	messages: path,
 	output: path
 }, {
@@ -56,7 +58,7 @@ if ( !opts.locale || !opts.output ) {
 }
 
 extraOptions = Object.keys( opts ).filter(function( option ) {
-	return !/help|version|locale|cldr|messages|output|argv/.test( option );
+	return !/help|version|locale|cldr|tz|messages|output|argv/.test( option );
 });
 
 if ( extraOptions.length ) {
