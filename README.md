@@ -141,7 +141,7 @@ globalize.formatNumber( ... );
 
 &nbsp;&nbsp;&nbsp; **cldr** optional. It's an *Object* with CLDR data (in the JSON format) or a *Function* taking one argument: locale, a *String*; returning an *Object* with the CLDR data for the passed locale. Defaults to the entire supplemental data plus the entire main data for the defaultLocale.
 
-&nbsp;&nbsp;&nbsp; **timeZone** optional. It's an *Object* with IANA time zone data (in the JSON format) or a *Function* returning an *Object* with the IANA time zone data. Defaults to the entire IANA time zone data from [iana-tz-data](https://github.com/rxaviers/iana-tz-data)  package.
+&nbsp;&nbsp;&nbsp; **timeZoneData** optional. It's an *Object* with IANA time zone data (in the JSON format) or a *Function* returning an *Object* with the IANA time zone data. Defaults to the entire IANA time zone data from `[iana-tz-data](https://github.com/rxaviers/iana-tz-data)` package.
 
 &nbsp;&nbsp;&nbsp; **messages** optional. It's an *Object* with messages data (in the JSON format) or a *Function* taking one argument: locale, a *String*; returning an *Object* with the messages data for the passed locale. Defaults to `{}`.
 
