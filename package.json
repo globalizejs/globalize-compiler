@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:jquery-support/globalize-compiler.git"
+    "url": "git@github.com:globalizejs/globalize-compiler.git"
   },
   "keywords": [
     "globalize"
@@ -29,9 +29,9 @@
   "author": "The jQuery Project",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jquery-support/globalize-compiler/issues"
+    "url": "https://github.com/globalizejs/globalize-compiler/issues"
   },
-  "homepage": "https://github.com/jquery-support/globalize-compiler",
+  "homepage": "https://github.com/globalizejs/globalize-compiler",
   "dependencies": {
     "escodegen": "^1.6.1",
     "esprima": "^2.3.0",
