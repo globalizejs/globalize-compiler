@@ -29,6 +29,9 @@ console.log(Globalize.formatDateToParts(new Date(), {date: "long"}));
 var dateParser = Globalize.dateParser({skeleton: "MMMd", timeZone: "America/New_York"});
 console.log(dateParser("Jan 1"));
 
+dateParser = Globalize.dateParser({skeleton: "MMMd", timeZone: "Europe/Oslo"});
+console.log(dateParser("Jan 1"));
+
 // Use parseDate.
 console.log(Globalize.parseDate("1/2/1982"));
 
