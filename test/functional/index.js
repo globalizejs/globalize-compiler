@@ -36,9 +36,15 @@ describe("The compiled `basic.js`", function() {
 	});
 
 	it("should include support for dateParser", function() {
-		var result = Globalize.dateParser({skeleton: "MMMd", timeZone: "America/New_York"})("Jan 1");
-		expect(result.getMonth()).to.equal(0);
-		expect(result.getDate()).to.equal(1);
+		// When it is Feb 23 in New York, it has already been Feb 23rd in GMT for 4 or 5 hours (depending on DST).
+		var inNewYorkTime = Globalize.dateParser({skeleton: "MMMd", timeZone: "America/New_York"})("Feb 23");
+		expect(inNewYorkTime.getUTCMonth()).to.equal(1);
+		expect(inNewYorkTime.getUTCDate()).to.equal(23);
+
+		// When it is Feb 23 in Oslo, it is not yet (by 1 hour) Feb 23rd in GMT.
+		var inOsloTime = Globalize.dateParser({skeleton: "MMMd", timeZone: "Europe/Oslo"})("Feb 23");
+		expect(inOsloTime.getUTCMonth()).to.equal(1);
+		expect(inOsloTime.getUTCDate()).to.equal(22);
 	});
 
 	it("should include support for parseDate", function() {
